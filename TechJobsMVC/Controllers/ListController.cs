@@ -27,7 +27,7 @@ namespace TechJobsMVC.Controllers
             {"positionType", JobData.GetAllPositionTypes()},
             {"coreCompetency", JobData.GetAllCoreCompetencies()}
         };
-
+        
         public IActionResult Index()
         {
             ViewBag.columns = ColumnChoices;
@@ -41,6 +41,7 @@ namespace TechJobsMVC.Controllers
         }
 
         // list jobs by column and value
+        [HttpGet]
         public IActionResult Jobs(string column, string value)
         {
             List<Job> jobs;
